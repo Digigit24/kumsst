@@ -4,8 +4,10 @@
  */
 import type { User } from "../types/auth.types";
 // Base API URL - Local Development
-export const API_BASE_URL = "http://127.0.0.1:8000";
+//export const API_BASE_URL = "http://127.0.0.1:8000";
 // export const API_BASE_URL ="https://kumsserp2.celiyo.com"
+export const API_BASE_URL ="https://kumsst.celiyo.com"
+
 export const WS_CHAT_URL = "ws://127.0.0.1:8000/ws/chat/";
 export const WS_NOTIFICATIONS_URL = "ws://127.0.0.1:8000/ws/notifications/";
 
