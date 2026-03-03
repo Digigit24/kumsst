@@ -1,0 +1,48 @@
+
+.library-loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library-loader {
+  position: relative;
+  width: 33px;
+  height: 33px;
+  perspective: 67px;
+}
+
+.library-loader div {
+  width: 100%;
+  height: 100%;
+  background: #2f3545; /* Dark blue-gray */
+  position: absolute;
+  left: 50%;
+  transform-origin: left;
+  animation: library-loader-anim 2s infinite;
+}
+
+/* Dark mode adjustment if needed, using CSS var or media query */
+@media (prefers-color-scheme: dark) {
+  .library-loader div {
+    background: #e2e8f0; /* Slate 200 */
+  }
+}
+/* Or using Tailwind classes parent selector if feasible, but here standard CSS. 
+   To support class-based dark mode (Shadcn uses 'dark' class on html), we need:
+*/
+:global(.dark) .library-loader div {
+  background: #e2e8f0;
+}
+
+.library-loader div:nth-child(1) { animation-delay: 0.15s; }
+.library-loader div:nth-child(2) { animation-delay: 0.3s; }
+.library-loader div:nth-child(3) { animation-delay: 0.45s; }
+.library-loader div:nth-child(4) { animation-delay: 0.6s; }
+.library-loader div:nth-child(5) { animation-delay: 0.75s; }
+
+@keyframes library-loader-anim {
+  0% { transform: rotateY(0deg); }
+  50%, 80% { transform: rotateY(-180deg); }
+  90%, 100% { opacity: 0; transform: rotateY(-180deg); }
+}
